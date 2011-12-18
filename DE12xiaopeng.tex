@@ -1,0 +1,599 @@
+\begin{filecontents}{readme.txt}
+Typesetting with this template for ARC research grants
+------------------------------------------------------
+* Omit this readme.txt information when appropriate.
+
+* Use pdflatex to typeset this template.
+
+* Omit the information within the 'arcinstruction'
+environments when appropriate.
+
+* Each of the sections in the template, defined by
+the major environments, may be omitted or retained
+as you please.
+
+
+
+* Write your application in the context of
+- the ARC Instructions for Applicants (when available)
+- the FAQ 
+- and the ARC Funding Rules
+all available from
+http://www.arc.gov.au/ncgp/decra/instructions.htm
+
+* Typesetting this template generates one pdf
+file.  You have to extract various ranges of pages
+from the pdf to upload into RMS.  At least four
+possibilities will do this extraction, choose one:
+
+- generate the entire document, then use something
+like 'Print to PDF...' to generate pdf of the
+specific pages required; or
+
+- separate all sections and subsections into
+appropriate separate *.tex files, then typeset
+them in the document with '\include{}' commands,
+and generate each individual pdf required via the
+various specific '\includeonly{}' commands; or
+
+- generate the entire document and use the public
+domain software pdftk to extract separately the
+necessary pages; or
+
+- use the LaTeX 'versions' package to control
+which environment is to be typeset at any one time.
+\end{filecontents}
+
+
+
+
+\begin{filecontents}{DE12template.bbl}
+\begin{thebibliography}{xx}
+
+\harvarditem[Armbruster et~al.]{Armbruster, Guckenheimer
+\harvardand\ Holmes}{1989}{Armbruster89} Armbruster, D.,
+Guckenheimer, J. \harvardand\ Holmes, P. \harvardyearleft
+1989\harvardyearright , `{Kuramoto--Sivashinsky} dynamics on the
+centre-unstable manifold', {\em SIAM J.~Appl Math} {\bf
+49},~676--691. \newblock
+\url{http://locus.siam.org/SIAP/volume-49/art_0149039.html}.
+
+\harvarditem{Arnold}{2003}{Arnold03} Arnold, L.  \harvardyearleft
+2003\harvardyearright , {\em Random Dynamical Systems}, Springer
+Monographs in Mathematics, Springer.
+
+\end{thebibliography}
+\end{filecontents}
+
+
+
+
+
+\documentclass[12pt,a4paper]{article}
+% The following are options to the package
+% more, More or MORE:  give more space but less comprehension
+% big:  uses a bigger font, one that is readable after RMS shrinks the pdf
+\usepackage[]{DE12} 
+
+%% Optionally get nice headings on each page.
+%\pagestyle{headings} 
+
+%% Invoke the following to typeset plain text sections
+%% for copying and pasting into RMS (as distinct from
+%% uploading pdf sections).  Using this means the copy
+%% and paste (Acrobat only) will not be corrupted by 
+%% ligatures.
+%\usepackage{microtype}
+%\DisableLigatures{encoding = *, family = * }
+
+
+\title{Stochastic slow manifolds and its applications}
+
+\author{Xiaopeng Chen}
+
+
+\begin{document}
+
+
+
+
+
+
+
+
+\begin{AdministrativeSummary}
+
+
+\subsection{Summary of Proposal}
+\begin{arcinstruction}
+Provide a written Proposal summary of no more than 750 characters (approximately 100 words) focussing on the aims, significance and expected outcomes of the project. Use plain English and the minimum of terminology unique to the area of study; and Avoid the use of quotation marks, acronyms and do not use all upper case characters in the text.
+\end{arcinstruction}
+
+Address the following questions: What is the setting? (Background)  What is planned to be done? (Aims)  Why do it? (Significance)  What are the planned the results? (Innovation) What will the results mean in theory and/or practise?  How will others use the results? (Benefit)
+
+
+\subsection{Summary of Project for Public Release}
+\begin{arcinstruction}
+Provide a two-sentence descriptor of no more than 350 characters (approximately 50 words) of the purpose and expected outcomes of the project which is suitable for media or other publicity material.  Do not duplicate or simply truncate the ‘Summary of Proposal’. Use plain English and make the summary comprehensible and accessible for the general public as far as possible; and avoid the use of quotation marks, acronyms and do not use all upper case characters in the text. 
+\end{arcinstruction}
+
+
+
+
+\end{AdministrativeSummary}
+
+
+
+
+
+
+\begin{Classifications}
+
+\subsection{National Research Priorities} 
+\begin{arcinstruction}
+Indicate which of the four National Research Priorities this Proposal falls within.
+Within RMS select from the drop down list under National Research Priority. Each priority has a number of associated priority goals---to add, select from the drop down list under Goals. 
+\end{arcinstruction}
+
+Try to do so if you can; write a reasonable argument in the project description.
+
+
+
+\subsection{Field of Research} 
+\begin{arcinstruction}
+The Field of Research (FOR) classification defines research according to disciplines. The FoR codes selected should describe the research in this Proposal. \url{http://www.arc.gov.au/applicants/codes.htm} Select each classification code that relates to the Proposal by clicking on 'Add FOR code'. Indicate the importance of each classification by using a percentage. Select the FOR codes carefully, as they are considered when assessors are being selected to read the Proposal.
+Please prioritise the classification codes from highest percentage to lowest percentage and ensure that the percentages sum up to 100\%.
+\end{arcinstruction}
+
+Choose these with care as the ARC panel your application goes to, and the important reviewers on the panel, are also probably determined by these.
+
+
+
+\subsection{Socio-Economic Objective}
+\begin{arcinstruction}
+The Socio-Economic Objective (SEO) classification indicates the sectors that are most likely to benefit from the project.  \url{http://www.arc.gov.au/applicants/codes.htm}  Select each classification code that relates to the Proposal by clicking on 'Add SEO code'. Indicate the importance of each classification by using a percentage. The ARC recommends no more than three SEO's per Proposal, though more may be used.
+Please prioritise the classification codes from highest percentage to lowest percentage and ensure that the percentages sum up to 100\%.
+\end{arcinstruction}
+
+
+
+\subsection{Keywords} 
+\begin{arcinstruction}
+Enter up to three (or more) keywords to describe the proposed research. The keywords should be of the kind normally required for submitting an article to a major refereed journal.  Keywords assist the ARC in allocating Proposals to assessors; therefore it is important that the keywords indicate the broad disciplinary or interdisciplinary research context of the Proposal not just specific outcomes. Please note that these keywords are for the ARC’s guidance only. 
+\end{arcinstruction}
+
+Choose these with care as these, the title and the earlier summary are probably the main determiner of the choice of reviewers.
+
+
+
+
+\subsection{Does this Proposal relate to any of the following special interest items?}
+\begin{arcinstruction}
+Please select the appropriate item from the drop?down list if applicable.
+\end{arcinstruction}
+
+\end{Classifications}
+
+
+
+
+
+
+
+
+
+\begin{Personnel}
+
+\subsection{Details on your career and opportunities for research over the last 5 years}
+
+\begin{arcinstruction}
+Please attach a PDF detailing your career and research opportunities over the last five years (one page maximum). Provide and explain:
+Provide and explain:
+\begin{enumerate}
+\item The research opportunities that you have had with reference to your employment conditions (e.g. teaching or administration load, part?time status, non?research employment or unemployment)
+\item	Any other aspects of your career or research opportunities for research that are relevant to assessment and that have not been detailed elsewhere in this Proposal (e.g. any
+circumstances that may have affected the time you have had to conduct and publish research). 
+\end{enumerate}
+\end{arcinstruction}
+
+Throughout your own Personnel section, use \verb|\cite{}| or \verb|\cite[]{}| to refer to articles to be listed in the bibliography of the project proposal, and \verb|\xcite{}| to refer to any in the list of publications appearing in your section here: for example~\xcite{Roberts06k}.
+
+
+
+
+\subsection{Significant publications}
+
+\begin{arcinstruction}
+Please attach a PDF with a list of your significant publications (four pages maximum). Provide your research publications split into the following five categories. List publications under the following headings and in this order:
+i.~scholarly books; ii.~scholarly book chapters;
+iii.~edited books; iv.~refereed journal articles;
+v.~conference submissions (e.g. papers, invited presentations and posters); and
+vi.~other (e.g.~major exhibitions, compositions or performances). Asterisk publications relevant to this Proposal.
+\end{arcinstruction}
+
+Other schemes require you to include the acceptance date if listing in-press publications.
+
+
+Perhaps: 
+\begin{enumerate}
+\item use a simple separate \LaTeX\ document to generate a bibliography via BibTeX using \texttt{unsrt} bibilographystyle; 
+\item edit the bbl file to change \texttt{thebibliography} to \texttt{enumerate}; 
+\item interleave \verb|\item[]\textbf{Scholarly books}| and similar headings as below;  
+\item paste the edited bbl file into this source, or use \verb|\input{filename.bbl}|.
+\end{enumerate}
+My DE12 style file temporarily sets \verb|\bibitem| to work here like an \verb|\item| 
+Delete these instructions when finished.  
+
+
+\begin{enumerate}
+
+\item[]\textbf{Scholarly books}
+
+\item[]\textbf{Scholarly book chapters}
+
+\item[]\textbf{Edited books}
+
+\item[]\textbf{Refereed journal articles}
+
+\bibitem{Roberts06k}
+* A.~N. Onymous.
+\newblock Normal form transforms separate slow and fast modes in stochastic
+  dynamical systems.
+\newblock \emph{Physica~A}, 387:12--38, 2008.
+
+\item[]\textbf{Conference submissions}
+
+\item[]\textbf{Other}
+
+\bibitem{Roberts2011}
+* A.~J. Roberts, T. MacKenzie, and J. Bunder. Accurate macroscale modelling of spatial dynamics in multiple dimensions. Technical report, \url{http:// arxiv.org/abs/1103.1187}, February 2011.
+
+\end{enumerate}
+
+
+
+
+
+
+
+\subsection{A statement on your contributions to the research field of this Proposal}
+\begin{arcinstruction}
+Please attach a PDF detailing your contributions to the research field and evidence of your performance which demonstrate your capacity to undertake the proposed research (1 page maximum). This could include your PhD research and related publications and presentations, subsequent contributions where applicable as well as conference organisation and learned societies’ membership.
+\end{arcinstruction}
+
+
+I emphasise that the key here is to provide evidence that other people value your work: provide citations, awards, prizes, invitations, elections to positions, editing roles, nice comments by reviewers of articles or dissertation.
+
+Perhaps briefly mention environment of research groups, centres, institutes as part of the capacity.
+
+
+
+ 
+\end{Personnel}
+
+
+
+
+
+
+
+
+
+
+
+\begin{ProjectDescription}
+
+\begin{arcinstruction}
+The Project Description must not exceed six A4 pages. In the uploaded PDF you must use the headings below, and in this order. Applicants need to ensure that information provided under these headings addresses the Selection Criteria as detailed in the Funding Rules.
+\end{arcinstruction}
+
+\subsubsection{Project}
+
+\begin{arcinstruction}
+Address the following selection criteria:
+\begin{itemize}
+\item does the research address a significant problem? 
+\item is the conceptual/theoretical framework innovative and original? 
+\item will the aims, concepts, methods and results advance knowledge? 
+\item are the project design and methods appropriate?
+\item will the proposed research provide economic, environmental, cultural and/or social benefit to Australia?
+\item does the project address a National Research Priority area?
+\end{itemize}
+\end{arcinstruction}
+
+Describe the background to the proposed project/program of research. Refer only to refereed papers that are widely available to national and international research communities.
+
+Ensure to mention alignment with institutional research strategies, strengths, groups.  Make this first bit a form of 'executive summary' of the whole subsection~D1. Less than one page.
+
+
+\paragraph{Significance and Innovation}
+
+Describe how the anticipated outcomes advance the knowledge base of the discipline, why the research activity aims and concepts are novel and innovative, and whether the research addresses an important problem for the discipline.  Include information about recent international progress in the field of the research, and the
+relationship of this Proposal to work in the field generally.
+Detail what new methodologies or technologies will be developed.
+Describe the significance of the research in the national/international context, the expected outcomes, and the planned impact of the proposed project/program of research.
+
+
+
+
+\paragraph{Aims}
+
+Clearly detail the aims and objectives of the proposed project/program of research.
+Outline the conceptual framework, design and methods and demonstrate that these are adequately developed, well integrated and appropriate to the aims of the research activity.
+
+
+
+\paragraph{Approach}
+
+Ensure you identify tasks, with planned timelines, participants and any required equipment.
+
+
+\paragraph{Benefit}
+
+Among other aspects, perhaps describe the extent to which the proposed project will build collaborations, i.e.~across industry and/or research institutions and/or disciplines. 
+
+
+\paragraph{National Research Priority}
+
+If the research has been nominated as focussing upon a topic or outcome that falls within one of the National Research Priorities, explain how it addresses one or more of the associated Priority Goals (as selected in Part B1 of the Proposal form).
+Describe how the Award and the proposed project/program of research will increase national research capacity and/or enhance the capacity of one or more of the targeted discipline areas. 
+
+
+
+
+
+
+\subsubsection{Institutional support}
+
+\begin{arcinstruction}
+Address the selection criteria:
+\begin{itemize}
+\item is there an existing, or developing, supportive and high quality research environment?
+\item are the necessary facilities available to complete the project?
+\item are there adequate strategies to encourage dissemination, commercialisation, if appropriate, and promotion of research outcomes?
+\end{itemize}
+\end{arcinstruction}
+
+Ensure you mention who will be mentoring you and how.
+
+
+
+
+
+
+\subsubsection{References}
+
+\begin{arcinstruction}
+Note: References only may be in 10 point font.
+\end{arcinstruction}
+
+Use \verb|\cite{}| (wherever possible for active referencing) or \verb|\cite[]{}| (for parenthetical referencing) and BibTeX, then \LaTeX\ will build your reference list for you.
+
+\bibliography{yourbibfile}
+
+
+
+
+
+
+\subsection{Strategic Statement by the Administering Organisation}
+
+\begin{arcinstruction}
+Please provide a Strategic Statement of two A4 pages maximum which outlines the institutional support for the DECRA Candidate. Please provide:
+\begin{itemize}
+\item The existing and/or emerging research strengths of the Administering Organisation;
+\item The positioning of the DECRA Recipient within a high quality research environment; and
+\item The research only and/or research and teaching pathways available at the Administering Organisation during and after completion of the Project. 
+\end{itemize}
+Note: The strategic statement must be signed by the Deputy Vice?Chancellor (Research), Chief Executive Officer or equivalent.
+
+Research Branch want a Word copy of this subsubsection.  After satisfied with it, transfer somehow.
+\end{arcinstruction}
+
+
+\subsubsection*{\arcauthor\\\arctitle}
+
+The University of Adelaide is delighted to present this outstanding DECRA proposal for assessment by the Australian Research Council.
+
+% THE TEXT BELOW SHOULD BE INCLUDED IN THE DECRA’s STRATEGIC STATEMENT
+
+The University of Adelaide's sustained research excellence is due to a long tradition of rigorous recruitment, selection and retention of exceptional research staff. The Discovery Early Career Researcher Award (DECRA) scheme represents a tremendous opportunity to drive this tradition further. Recognising the importance of securing and retaining talented early-career researchers, the University of Adelaide will provide the following support for successful DECRA recipients:
+\begin{itemize}
+\item A \$15,000 establishment grant to accelerate research momentum; \item \$5,000 of travel funding to be used to further enhance research collaboration and dissemination; 
+\item Salary supplementation to the applicable salary level as under University policy; and
+\item Access to University funding schemes such as Overseas Conferences, Special Studies and other support.
+\end{itemize}
+
+
+\subparagraph{Research strength of the university}
+
+% If the applicant is aligned with a designated University Institute or Centre, then the following a paragraph including the following should be included:
+
+The University has committed \$x to build and establish the Institute/Centre <name> as a world-leading concentration of exceptional inter-disciplinary researchers. <The applicant> will become a key member of this Institute/Centre and have immediate access to the combined expertise and networks of the Institute/Centre, including top-class researchers such as x, y, and~z.
+
+
+\subparagraph{High quality research environment}
+Details of how to address the Research Environment criterion can be found on the Research
+Branch web site at \url{http://www.adelaide.edu.au/rb/arc/research_environment/instructions.html} 
+
+\subparagraph{Development pathways}
+See Funding Rules \url{http://www.arc.gov.au/pdf/DECRA_Funding_Rules_21Feb2011.pdf} p6
+
+\emph{Additional Faculty/School support}
+Each Faculty/School may have specific additional support that will be offered to intending DECRA Applicants. This support will depend on whether the applicant is a current University employee with a substantive position, or an external applicant. Such support may include: a continuing rolling contract in the first instance for 3 years post fellowship on the basis of achievement of clear key performance indicators during the Fellowship (as set by the Faculty and School); consideration of appropriate salary supplementation; access to specialist research facilities; management of teaching commitments (for current University employees only).
+Additional support will be offered at the discretion of the relevant Head of School and Faculty Executive Dean.
+\emph{All intending applicants must contact their relevant head of school to discuss any support provisions over and above those indicated in the first paragraph above.}
+
+
+\end{ProjectDescription}
+
+
+
+
+
+
+
+
+
+
+
+\begin{ProjectCost}
+Choose to document here budget information prior to entering into \textsc{rms}, or omit this section, as you please.
+\end{ProjectCost}
+
+
+
+
+\begin{BudgetJustifications}
+
+The budget justification is to address the need for the item itself.  Cost is a minor detail.  
+\begin{itemize}
+\item If you want to travel, justify why and when you want to travel in terms of the project plan.  Cross reference.  Names names, not vague possibilities.
+\item If you want lab equipment, justify why your current `world leading' lab does not already have the equipment.  Cross reference the project plan.  For example, the current camera does not have the required resolution/frame rate/whatever.
+\item The same goes for high performance computers, explain why the school's compute server is inadequate, why SAPAC parallel `supercomputer' is inadequate, why the Australian APAC facility is inadequate.   Estimate load, cross reference to the methods in the project plan.
+\end{itemize}
+
+
+\subsection{Justification of funding requested from the ARC}
+\begin{arcinstruction}
+The ARC budget justification information must not exceed one A4 page.
+The justification should indicate how the DECRA candidate will use the project cost funding each year. This statement should include the need and cost for each item requested from the ARC using the same headings as in the budget at E1.
+	Please justify and explain the need and cost for each item requested from the ARC. Explain why a certain item is necessary for the Project and what it will contribute. For research support personnel please state that a full?time research assistant or technician with a specific level of expertise is required for ‘x’ months.
+	If seeking funding for new equipment, please describe how the equipment will be used and provide details of the manufacturer, supplier, cost and installation based on quotations obtained. Do not supply the quotations.
+	Please justify and explain the need and cost of economy domestic and international travel for the DECRA Candidate and research support personnel associated with a Project.
+\end{arcinstruction}
+
+
+
+
+
+\end{BudgetJustifications}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{ResearchSupport}
+\begin{arcinstruction}
+For the DECRA Candidate on this Proposal, provide details of requested and awarded research funding (ARC and other agencies in Australia and overseas) for the years 2010 to 2014 inclusive. That is, list all projects/Proposals/fellowships awarded or requests submitted involving the DECRA Candidate for funding.
+•	Use the table format below to create a list of relevant projects/Proposals. Then upload the list as a PDF.
+•	List the most current Proposal first. List other Proposals and/or projects (including Fellowships) in descending date order.
+•	Support statuses are ‘R’ for requested, ‘C’ for current support and ‘P’ for past support. •	The Proposal/project ID applies only to Proposals, current and past projects (including
+fellowships), funded by the ARC or NHMRC. •	Details should be provided for all sources of funding, not just ARC funding. •	Funding amounts are to be in thousands of Australian dollars. •	The example on the following page is a guide however a template table is also provided
+which has been formatted to fit the specified minimum margin requirement of 0.5cm. 
+\end{arcinstruction}
+
+
+\subsection{Research support for the DECRA Candidate}
+\begin{center}
+\begin{tabular}{|p{\mywidth}|l|l|p{5.6em}|*5{p{2.5em}|}}
+\hline
+Description (all named investigators on any proposal or grant/ project/ fellowship in which a participant is involved, project title, source of support, scheme and round) &
+\rotatebox[origin=tr]{90}{ Same Research Area} &
+\rotatebox[origin=tr]{90}{ Support Status} &
+Proposal/ Project ID (if applicable) &
+2010 (\$'000) &
+2011 (\$'000) &
+2012 (\$'000) &
+2013 (\$'000) &
+2014 (\$'000)
+\\ \hline
+\arcauthor; \arctitle; ARC; FT11 &
+Yes &
+R &
+DE12xxx?? &
+&
+&
+?? &
+?? &
+?? 
+\\ \hline
+B Jones, Really great proposal on excellent things.  ARC, LP10R2 &
+Yes &
+R &
+LP100200999   &
+&
+&
+80 &
+60 &
+50 
+\\ \hline
+A Jones, B Jones, Another really great proposal on excellent things. Round 3 &
+No &
+C  &
+& 
+&
+65 &
+100&
+&
+\\ \hline   
+Mr Example, sample proposal that is great,  ARC, DP 2006 &
+Yes &
+P &
+DP06000000 &
+150 &
+&
+&
+&
+\\ \hline
+\end{tabular}
+\end{center}
+
+
+\end{ResearchSupport}
+
+
+
+
+\begin{ProgressStatements}
+\begin{arcinstruction}
+For the DECRA Candidate on this Proposal, please attach a statement detailing progress for each ARC Project/Fellowship involving the DECRA Candidate that has been awarded funding for 2010 under the ARC Discovery Projects, Linkage Projects or Fellowships (Future Fellowships, Australian Laureate Fellowship, Federation Fellowships) schemes.
+Click ‘Add Answer’ to insert additional boxes for each relevant Project/Fellowship.
+Please provide:
+•	The Project ID, first named investigator (Project Leader), and scheme for the DECRA Candidate on this Proposal who has been awarded funding for 2010 under the ARC Discovery Projects, Linkage Projects or Fellowships scheme;
+•	Upload a PDF of no more than one A4 page for each funded project detailing the progress for each Project/Fellowship involving that Participant; and
+•	A statement of progress for each project indicated in Part H1 (received 2010 ARC funding) must be included in the Proposal submission regardless of whether a progress report or final report has or has not been submitted to the Research Office or ARC.
+Note: Only projects which have received funding from the ARC in 2010 (annual allocated funding) require a statement of progress. (Please do not include statements on progress for projects which received carry forward funding only.) You do not need to provide statements for projects other than for Discovery Projects, Linkage Projects or Fellowships schemes.
+\end{arcinstruction}
+
+Repeat subsections for each project as required.
+
+\subsection{DP07xxxxx: Previous fascinating project}
+\begin{arcinstruction}
+Upload a PDF of no more than one A4 page for each funded project detailing the progress for each Project/Fellowship involving that Participant.
+\end{arcinstruction}
+
+\end{ProgressStatements}
+
+
+
+
+
+\begin{Additional}
+
+\begin{arcinstruction}
+If ‘yes’ has been selected you must:
+•	Select from the agencies available in the drop down list; and •	Select ‘Other’ if the agency is not in the drop down list and type the name of the agency/ies in
+the box provided.
+Note: A full list of Proposals submitted should also be included at H1 (Research Support) of the Application Form.
+It is important that the ARC is aware of any concurrent applications for funding support (e.g.~through other Commonwealth, state or territory funding programs). You must also keep the ARC informed about the outcomes of these applications.
+\end{arcinstruction}
+
+Document anything here prior to uploading information, or omit, as you please.
+
+\subsection{Have you submitted or do you intend to submit a similar Proposal to any other agency?}
+
+\end{Additional}
+
+
+
+
+\end{document}
