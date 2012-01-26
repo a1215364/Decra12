@@ -1,0 +1,948 @@
+\begin{filecontents}{readme.txt}
+Typesetting with this template for ARC research grants
+------------------------------------------------------
+* Omit this readme.txt information when appropriate.
+
+* Use pdflatex to typeset this template.
+
+* Omit the information within the 'arcinstruction'
+environments when appropriate.
+
+* Each of the sections in the template, defined by
+the major environments, may be omitted or retained
+as you please.
+
+* Write your application in the context of
+- the ARC Instructions for Applicants (when available)
+- the FAQ
+- and the ARC Funding Rules
+all available from
+http://www.arc.gov.au/ncgp/decra/instructions.htm
+
+* Typesetting this template generates one pdf
+file.  You have to extract various ranges of pages
+from the pdf to upload into RMS.  At least four
+possibilities will do this extraction, choose one:
+
+- generate the entire document, then use something
+like 'Print to PDF...' to generate pdf of the
+specific pages required; or
+
+- separate all sections and subsections into
+appropriate separate *.tex files, then typeset
+them in the document with '\include{}' commands,
+and generate each individual pdf required via the
+various specific '\includeonly{}' commands; or
+
+- generate the entire document and use the public
+domain software pdftk to extract separately the
+necessary pages; or
+
+- use the LaTeX 'versions' package to control
+which environment is to be typeset at any one time.
+\end{filecontents}
+
+
+
+
+\begin{filecontents}{DE12template.bbl}
+
+\end{filecontents}
+
+
+\newcommand{\spde}{\textsc{spde}}
+\newcommand{\pde}{\textsc{pde}}
+\newcommand{\sde}{\textsc{sde}}
+\newcommand{\aim}[1]{Aim~\ref{a#1}}
+
+
+
+\documentclass[12pt,a4paper]{article}
+% The following are options to the package
+% more, More or MORE:  give more space but less comprehension
+% big:  uses a bigger font, one that is readable after RMS shrinks the pdf
+\usepackage[]{DE12}
+
+%% Optionally get nice headings on each page.
+%\pagestyle{headings}
+
+%% Invoke the following to typeset plain text sections
+%% for copying and pasting into RMS (as distinct from
+%% uploading pdf sections).  Using this means the copy
+%% and paste (Acrobat only) will not be corrupted by
+%% ligatures.
+%\usepackage{microtype}
+%\DisableLigatures{encoding = *, family = * }
+
+
+\title{Stochastic center manifold theory and  its applications}
+
+\author{Xiaopeng Chen}
+
+
+\begin{document}
+
+
+
+
+
+
+
+
+\begin{AdministrativeSummary}
+
+
+\subsection{Summary of Proposal}
+\begin{arcinstruction}
+%Provide a written Proposal summary of no more than 750 characters (approximately 100 words) focussing on the aims, significance and expected outcomes of the project. Use plain English and the minimum of terminology unique to the area of study; and Avoid the use of quotation marks, acronyms and do not use all upper case characters in the text.
+\end{arcinstruction}
+
+%Address the following questions: What is the setting? (Background)  What is planned to be done? (Aims)  Why do it? (Significance)  What are the planned the results? (Innovation) What will the results mean in theory and/or practise?  How will others use the results? (Benefit)
+This project develops effective stochastic center manifold theory to extract explicit  and accurate macroscopic models from complex stochastic physical and engineering systems. The important class of systems we address are those microscopically described in space-time by stochastic differential equations and stochastic partial differential equations. Due to micro-macro and nonlinear interaction, randomness on the microscopic scale feeds into macroscopic dynamics and needs to be accounted for as in our planned modelling. These results will provide effective theory and methodologies for the simulation and understanding of large, noisy complex systems.
+
+
+\subsection{Summary of Project for Public Release}
+\begin{arcinstruction}
+%Provide a two-sentence descriptor of no more than 350 characters (approximately 50 words) of the purpose and expected outcomes of the project which is suitable for media or other publicity material.  Do not duplicate or simply truncate the ‘Summary of Proposal’. Use plain English and make the summary comprehensible and accessible for the general public as far as possible; and avoid the use of quotation marks, acronyms and do not use all upper case characters in the text.
+\end{arcinstruction}
+
+
+This project develops a mathematical basis for effectively modelling highly complex, nonlinear, noisy systems in engineering and sciences. Potential application areas include climate modelling, nanotechnology, and modern micro-structured materials.
+
+
+
+\end{AdministrativeSummary}
+
+
+
+
+
+
+\begin{Classifications}
+
+\subsection{National Research Priorities}
+\begin{arcinstruction}
+%Indicate which of the four National Research Priorities this Proposal falls within.
+%Within RMS select from the drop down list under National Research Priority. Each priority has a number of associated priority goals---to add, select from the drop down list under Goals.
+\end{arcinstruction}
+
+
+Frontier technologies for building and transforming Australian industry:  Breakthrough sciences.
+
+
+
+\subsection{Field of Research}
+\begin{arcinstruction}
+%The Field of Research (FOR) classification defines research according to disciplines. The FoR codes selected should describe the research in this Proposal. \url{http://www.arc.gov.au/applicants/codes.htm} Select each classification code that relates to the Proposal by clicking on 'Add FOR code'. Indicate the importance of each classification by using a percentage. Select the FOR codes carefully, as they are considered when assessors are being selected to read the Proposal.
+%Please prioritise the classification codes from highest percentage to lowest percentage and ensure that the percentages sum up to 100\%.
+\end{arcinstruction}
+
+Need to select up to three:
+
+010201 Approximation Theory and Asymptotic Methods 40\%
+
+010204 Dynamical systems in application 40\%
+
+010301 Numerical analysis 20\%
+
+080205 Numerical computation
+
+
+
+\subsection{Socio-Economic Objective}
+\begin{arcinstruction}
+%The Socio-Economic Objective (SEO) classification indicates the sectors that are most likely to benefit from the project.  \url{http://www.arc.gov.au/applicants/codes.htm}  Select each classification code that relates to the Proposal by clicking on 'Add SEO code'. Indicate the importance of each classification by using a percentage. The ARC recommends no more than three SEO's per Proposal, though more may be used.
+%Please prioritise the classification codes from highest percentage to lowest percentage and ensure that the percentages sum up to 100\%.
+\end{arcinstruction}
+
+Perhaps
+
+60\% 970101 Expanding Knowledge in the Mathematical Sciences
+
+20\% 970102 Expanding Knowledge in the Physical Sciences
+
+20\% 970109 Expanding Knowledge in Engineering
+
+
+
+\subsection{Keywords}
+\begin{arcinstruction}
+%Enter up to three (or more) keywords to describe the proposed research. The keywords should be of the kind normally required for submitting an article to a major refereed journal.  Keywords assist the ARC in allocating Proposals to assessors; therefore it is important that the keywords indicate the broad disciplinary or interdisciplinary research context of the Proposal not just specific outcomes. Please note that these keywords are for the ARC’s guidance only.
+\end{arcinstruction}
+stochastic  differential equations; stochastic partial differential equations; stochastic center manfiods.
+
+
+
+
+\subsection{Does this Proposal relate to any of the following special interest items?}
+\begin{arcinstruction}
+%Please select the appropriate item from the drop?down list if applicable.
+\end{arcinstruction}
+No
+\end{Classifications}
+
+
+
+
+
+
+
+
+
+\begin{Personnel}
+
+\subsection{Details on your career and opportunities for research over the last 5 years}
+
+\begin{arcinstruction}
+%Please attach a PDF detailing your career and research opportunities over the last five years (one page maximum). Provide and explain:
+%Provide and explain:
+%\begin{enumerate}
+%\item The research opportunities that you have had with reference to your employment conditions (e.g. teaching or administration load, part?time status, non?research employment or unemployment)
+%\item	Any other aspects of your career or research opportunities for research that are relevant to assessment and that have not been detailed elsewhere in this Proposal (e.g. any
+%circumstances that may have affected the time you have had to conduct and publish research). 
+%\end{enumerate}
+\end{arcinstruction}
+
+%Throughout your own Personnel section, use \verb|\cite{}| or \verb|\cite[]{}| to refer to articles to be listed in the bibliography of the project proposal, and \verb|\xcite{}| to refer to any in the list of publications appearing in your section here: for example~\xcite{Roberts06k}.
+
+\begin{paste}
+i)  I received my PhD degree at Huazhong University of Science
+and Technology, China in June 2010.
+
+ii)  In 2010,   I awarded a German Academic Exchange Service (DAAD) Short-term Scholarships.  The scholarships are aim to PhD student and postdoc for taking part in  research in  Germany. I visited  Institute of Mathematics, Technical University of Berlin  during April and May, 2010. 
+
+
+iii) In  July 2010, I worked as a Postdoctoral research associate  at  University of Adelaide. 
+
+
+iv) I have had no significant career interruptions.
+
+v) The faculty at Adelaide has developed and is funding niche strength research groups under the overall mentoring of the Associate Dean Research (Prof Roberts). I, and the whole research team, are under the umbrella of the strong Theoretical and Applied Mechanics faculty research group led and mentored by the Head of School (Assoc Prof Denier), and interact with the fluid mechanics, nanotechnology and petroleum research groups.
+
+vi) None.
+\end{paste}
+
+
+
+\subsection{Significant publications}
+
+\begin{arcinstruction}
+%Please attach a PDF with a list of your significant publications (four pages maximum). Provide your research publications split into the following five categories. List publications under the following headings and in this order:
+%i.~scholarly books; ii.~scholarly book chapters;
+%iii.~edited books; iv.~refereed journal articles;
+%v.~conference submissions (e.g. papers, invited presentations and posters); and
+%vi.~other (e.g.~major exhibitions, compositions or performances). Asterisk publications relevant to this Proposal.
+\end{arcinstruction}
+
+%Other schemes require you to include the acceptance date if listing in-press publications.
+
+
+%Perhaps:
+%\begin{enumerate}
+%\item use a simple separate \LaTeX\ document to generate a bibliography via BibTeX using \texttt{unsrt} bibilographystyle;
+%\item edit the bbl file to change \texttt{thebibliography} to \texttt{enumerate};
+%\item interleave \verb|\item[]\textbf{Scholarly books}| and similar headings as below;
+%\item paste the edited bbl file into this source, or use \verb|\input{filename.bbl}|.
+%\end{enumerate}
+%My DE12 style file temporarily sets \verb|\bibitem| to work here like an \verb|\item|
+%Delete these instructions when finished.
+
+
+\begin{enumerate}
+
+
+\item[]\textbf{Refereed journal articles}
+\bibitem{Roberts2011}
+* X.  Chen, A.  J. Roberts and I. G.  Kevrekidis.\newblock Projective integration of
+expensive multiscale stochastic simulation. \newblock \emph{ANZIAM J.}, 52(E): C661--C677, 2011.
+
+
+\bibitem{c4}  * X.   Chen, J.  Duan. \newblock State space decomposition for
+nonautonomous dynamical systems. \newblock \emph{Proceedings of the Royal Society of Edinburgh: Section A  Mathematics}, { 141}: 957--974, 2011.
+
+
+\bibitem{e3}  *  X.   Chen, J.  Duan  and  M. Scheutzow.  \newblock Evolution systems of measures for
+stochastic flows.   \newblock \emph{Dynamical Systems: An International
+Journal},  { 26}:  323--334, 2011.
+\bibitem{c1}  * X.   Chen, J.  Duan and X.  Fu. \newblock A sufficient condition
+for bifurcation in random dynamical systems. \newblock \emph{ Proceedings of
+the American Mathematical Society}, {{ 138}}: 965--973, 2010.
+
+
+\bibitem{c2}   * X.  Chen, J.  Duan. \newblock Random chain recurrent sets for
+random dynamcial systems.  \newblock \emph{Dynamical Systems: An International
+Journal}, { 24}:  537--546, 2009.
+
+
+\bibitem{c22}   *  Y.  Ye, X. Chen. \newblock  Separation properties of infinite iterated function systems. \newblock\emph{Journal of South China Normal University (Natural Science Edition)}.  4: 1--5, 2006.
+
+
+\item[]\textbf{Others}
+\bibitem{2}  *  Xiaopeng Chen, Liyan Wu and Yuanling Ye, 
+ {Ruelle  operator for infinite conformal iterated function systems}, submitted. 
+ 
+
+\bibitem{3}   * Xiaopeng Chen, Anthony J. Roberts and Jinqiao Duan,  Center manifolds for stochastic evolution equations, https://github.com/a1215364/manifold/blob/master/center manifold.pdf.
+\bibitem{4}   *  Xiaopeng Chen, Anthony J. Roberts and and Ioannis G  Kevrekidis,  Errors on projective integration of  Ornstein--Uhlenbeck processes,  to be submitted soon. 
+
+\bibitem{5}    *  Xiaopeng Chen, Anthony J. Roberts and Jinqiao Duan,   Center manifolds for infinite dimensional random dynamical systems,  to be submitted soon. 
+
+\bibitem{6}   *   Xiaopeng Chen, Manfred Denker and Jinqiao Duan,  Almost sure invariance principle for bundle random dynamical
+systems,  to be submitted soon. 
+
+
+ 
+\bibitem{7}   *     Xiaopeng Chen,  Conley index for continuous-time random dynamical systems,  to be submitted soon. 
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\subsection{A statement on your contributions to the research field of this Proposal}
+\begin{arcinstruction}
+%Please attach a PDF detailing your contributions to the research field and evidence of your performance which demonstrate your capacity to undertake the proposed research (1 page maximum). This could include your PhD research and related publications and presentations, subsequent contributions where applicable as well as conference organisation and learned societies’ membership.
+\end{arcinstruction}
+
+
+%I emphasise that the key here is to provide evidence that other people value your work: provide citations, awards, prizes, invitations, elections to positions, editing roles, nice comments by reviewers of articles or dissertation.
+
+%Perhaps briefly mention environment of research groups, centres, institutes as part of the capacity.
+
+
+
+
+ I have been working on   the field of   random dynamical systems at Huazhong University of Science and Technology.  My  doctoral dissertation aims to focus on  some topology
+methods to random dynamical systems and explore some applications in  mathematical models (stochastic differential equations and stochastic partial differential equations). My current research continues the interests I developed  my doctoral work, and is centered on the
+application of the random dynamical systems theory to problems in science and engineering.
+
+
+  My PhD work  is about  the dynamical behavior for random dynamical systems.  I consider some random invariant sets---random isolated invariant sets, on which  the Conley index  is defined, random attractors, random chain recurrent sets.
+The attractor-repeller pairs  provide an understanding the construction of random isolated
+ invariant sets.  I give a decomposition of the   random isolated
+ invariant sets (Chen and Duan, 2009).  Then I consider the  bifurcation phenomena for  random dynamical systems by using the Conley index (Chen and Duan, 2010). 
+  It is known that the theory of   invariant measures is  important  for random
+systems.  Prof.  M. Scheutzow invited me to visit Technical University of Berlin  during April and May, 2010  for collaborative research on the topic of random invariant measures for stochastic systems. We  introduce evolution systems of measures for
+stochastic flows and apply to the  2D stochastic Navier-Stokes equations with a timeperiodic
+forcing term ( Chen,  Duan and Scheutzow, 2011).  This is the case of  nonautonomous  stochastic systems.   In May, 2010,   I was invited to give a report on the 8th AIMS Conference on Dynamical Systems, Dierential Equations and Application,Dresden University of Technology, Dresden, Germany, May 2010.   I reported  the state space decomposition for nonautonomous dynamical systems 
+via chain recurrent sets (Chen and Duan, 2011). 
+
+My postdoc work is about the computation and simulation the stochastic systems. 
+Dimension reduction is to simplify models characterized by high dimensional   spaces to the lower  dimensional models.  It  reduces the computational demands for simulating multiscale systems. Center manifolds are one of the important random invariant sets. I prove the existence and smoothness of center manifolds for a class of stochastic evolution equations with linearly multiplicative noise.   I also discuss  the exponential attraction and approximation to center manifolds so that  the dynamical behavior is described by  a lower dimensional equation.  I   generalize  the center manifolds  to  infinite dimensional random dynamical systems by using the multiplicative ergodic theorem.  The results give a theory support of   discretization stochastic  partial differential equations. 
+
+ Projective integration has the potential to be an effective method to compute the long time dynamic behavior of multiscale systems.  I present a new  projective integration to stochastic differential equations. I estimate the linear stochastic differential equations from
+short time bursts of data, and then  apply the linear stochastic differential equations to a macroscopic  time step.  The important of the work is that  in many problems of multiscale problems, solving the full microscopic model is too expensitive to compute and the projective integration saves the time of computation. The Monte Carlo simulation suggests  the estimation parameters are  stable  for the stochastic projective integration (  Chen,   Roberts and IKevrekidis, 2011).  
+
+In statistics, maximum likelihood estimation  is a method of estimating the parameters of a statistical model.  I apply the  maximum likelihood estimation to a linear stochastic differential equations.    I give a theory support for the errors  analysis  of the  maximum likelihood
+estimation in the linear stochastic differential equations.  I show that the errors  of the estimation parameters are controlled by the burst and the macroscopic time step. The  theory of errors is applied to the stochastic projective integration. 
+
+
+My past research developed significant contributions to the present research project by providing effective methods and theories. They will lead to further work around the world on the open challenges of developing multiscale stochastic theory of use in many application areas.
+\end{Personnel}
+
+
+
+
+
+
+
+
+
+
+
+\begin{ProjectDescription}
+
+\begin{arcinstruction}
+%The Project Description must not exceed six A4 pages. In the uploaded PDF you must use the headings below, and in this order. Applicants need to ensure that information provided under these headings addresses the Selection Criteria as detailed in the Funding Rules.
+\end{arcinstruction}
+
+\subsubsection{Project}
+
+\begin{arcinstruction}
+%Address the following selection criteria:
+%\begin{itemize}
+%\item does the research address a significant problem?
+%\item is the conceptual/theoretical framework innovative and original?
+%\item will the aims, concepts, methods and results advance knowledge?
+%\item are the project design and methods appropriate?
+%\item will the proposed research provide economic, environmental, cultural and/or social benefit to Australia?
+%\item does the project address a National Research Priority area?
+%\end{itemize}
+\end{arcinstruction}
+
+%Describe the background to the proposed project/program of research. Refer only to refereed papers that are widely available to national and international research communities.
+
+%Ensure to mention alignment with institutional research strategies, strengths, groups.  Make this first bit a form of 'executive summary' of the whole subsection~D1. Less than one page.
+Scientists and engineers increasingly model complex physical systems on a microscopic scale to explore macroscale emergent phenomena.
+Such modelling includes climate, combustion processes, fusion reactor design and optimisation or understanding of microbial cells and cell colonies or neuronal function. 
+Whereas previously the theory and modelling of complex physical systems focussed on physical phenomena occurring at a single scale or at widely separated scales with little or no interaction, more and more modelling invokes highly nonlinear interactions among phenomena at many different scales, both physical and temporal.
+%\omit{USURPED BY BROWN'S MORE RECENT REVIEW??
+%However, the new models require new and deeper understanding of the mathematics of phenomena at multiple scales and how they interact, from atomic scales to macroscopic.
+%As the summary of \emph{Multiscale Mathematics Initiative: a Roadmap}
+%by \cite{Dolbow2004} on behalf of the computational scientists and mathematicians who attended and contributed to the series of three workshops sponsored by the U.~S. Department of Energy in 2004, has pointed out, however, that further development of sophisticated models and simulations is
+%\begin{quote}
+% significantly limited by the absence of a mathematical framework and software infrastructure to integrate heterogeneous models and data over the wide range of scales that characterize most physical phenomena. Fundamentally new mathematics and considerable development of computational methods and software will be required to address the challenges of multiscale simulation.
+%\end{quote}
+%Moreover in the Roadmap,
+%}
+In a wide ranging review of the future of Applied Mathematics for the U.S.~Dept.\ of Energy~\cite{Brown08} recorded the following consensus about the modelling of stochastic systems:
+\begin{quote}
+Recent advances in engineering and science enabling manipulations at the microscopic scale to drive processes at the macroscale have raised a number of problems in which modeling of discrete stochastic and multiscale systems is a central issue. For example, probabilistic or stochastic approaches must be employed in physical situations where the number of molecules involved is too small for the continuum hypothesis to hold, yet full deterministic information is also not available or is inappropriate to describe individual molecular trajectories and collisions. \ldots\ However, the simulation of more complex and spatially dependent stochastic and multiscale systems will require new mathematics to justify the necessary approximations.
+\end{quote}
+My proposal is to provide new important mathematics that will make a major contribution to the future of modelling of stochastic complex systems in many application areas.
+
+%\omit{
+%In an earlier review \cite{Dolbow2004} also identified
+%``Understanding how stochastic and rare events alter the properties of a system" as one of five Multiscale Mathematics Needs; and, as one of seven medium-term milestones,
+%\begin{quote}
+%New multiscale mathematical methods developed and used to derive multiscale models for some of the ``difficult" cases in multiscale science; e.g., problems without strong scale separation, rare event problems, reduction of high-dimensional state spaces to a small number of degrees of freedom, and discrete-to-continuum physics
+%  (identifying the point of transition).
+%\end{quote}
+%}
+Multiscale  modeling and computation is very active research area  and much additional work needs to be done~\cite{Brown08, Dol}. It   describes  broad theories of physical behavior  at different scales and now it  has become a key issue in many important applications such as the material science, chemistry and biology.  The random phenomena occurs in the physical world and our everyday life. Many multiscale systems  are  significantly influenced by noise.   Simulation and analysis the  behavior of stochastic multiscale systems  need develop a new mathematical framework.  It is related to applied mathematics and computational mathematics   particularly  the theory of random dynamical systems, stochastic differential equations, stochastic partial differential equations  and   numerical methods~\cite{Arn, e2, Gri}.
+Stochastic  differential equations (\textsc{sde}s) and stochastic partial differential equations (\spde{}s) are increasingly used to model, analyse, simulate and predict complex phenomena in many fields in science and engineering \cite[]{Ok, Chow}.  
+%\subsubsection{Aims}
+
+%\omit{The proposed project will make fundamental and important contributions to the mathematical methodology involved in this international research challenge.
+%}
+
+Our overall aim is to extend the current research programme that develops and applies systematic analysis methods for macroscopic modelling of the wide class of complex systems described by stochastic differential equations (\textsc{sde}s)  and  stochastic partial differential equations~(\spde{}s).
+
+The project aims to contribute the following.
+\begin{enumerate}
+\item\label{a1}  Since there exists  problem on the existence of random dynamical systems generated by generalstochastic partial differential equations, 
+    I  plan to use the  normal form  to transform  simple stochastic differential equations and stochastic partial differential equation, then consider a `close' to the stochastic original center manifold.  This research will give a new deeper understanding the existence of stochastic center manifolds.  The theory of stochastic center manifolds will also be applied to stochastic multiscale problems. 
+
+
+
+
+\item\label{a2} 
+Constructing numerical models of stochastic  partial differential equations is a very delicate task.
+Stochastic center manifold theory provides novel support for  macroscale, spatial discretisations of nonlinear stochastic partial differential equations.  I  will use the stochastic center manifold thoery to  discretization stochastic partial differential equations, then apply the results to gap-tooth scheme in mutiscale computation.
+
+\item\label{a3} Develop random dynamical theory methodology for macroscale models suitable for computational simulation.  
+The basic idea of projective integration is to run the microscopic solver for a number of steps, then extrapolate the solution over a large time step.  I will apply the method of stochastic center manifold to equation-free mutiscale computation  and dimension reduction. 
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\paragraph{Significance and Innovation}
+
+%Describe how the anticipated outcomes advance the knowledge base of the discipline, why the research activity aims and concepts are novel and innovative, and whether the research addresses an important problem for the discipline.  Include information about recent international progress in the field of the research, and the
+%relationship of this Proposal to work in the field generally.
+%Detail what new methodologies or technologies will be developed.
+%Describe the significance of the research in the national/international context, the expected outcomes, and the planned impact of the proposed project/program of research.
+The stochastic center manifold  theory is an important random dynamical sysstems method for dimension reduction and computation of mutiscale stochastic systems. 
+
+
+
+\paragraph{Aims}
+
+%Clearly detail the aims and objectives of the proposed project/program of research.
+%Outline the conceptual framework, design and methods and demonstrate that these are adequately developed, well integrated and appropriate to the aims of the research activity.
+
+
+%\omit{THIS SEEMS REPETITIVE TO ME.
+%The inclusion of stochastic forces on a microscopic scale can drastically influence the dynamics of complex systems.  We address the extraction of system-level information from given complex systems described by \spde{}s to complement other research in \spde{}s. We will establish an effective macroscopic model  thereby helping to evaluate accurately and efficiently the complete system. We also plan to give a qualitative  description of rare events. This will help us to understand how the stochastic effects alter the transitions in a complex system, which are essential and outstanding needs for analysing complex systems
+%(Dolbow et al., 2004).
+%}
+
+
+
+%%%%%%%
+
+%\spde{}s is an important model to describe multiscale complex
+%systems in sciences and engineering and other quantitative
+%fields~[Waymire and Duan, 2005; Chow et al., 1981; Majda et al.,
+%2001]. Macroscopic dynamics and metastability, the main focus of
+%this project, are preeminent examples of complex behaviour as it
+%
+%
+%
+%
+%are a most important research in complex systems~[ Donoho, 2003;
+%Ortiz, 2003; Hou, 2003;
+% Olivieri and Vares, 2004; Dolbow et al. 2004].
+
+
+
+This falls into the research of multiscale modelling.
+For example the Institute for Mathematics and its Application held a  wide ranging workshop on \textit{Atomic Motion to Macroscopic Models: The Problems of Disparate Temporal and Spatial Scales in Matter} in April 2005.
+The workshop explored ``new advances and challenges in modeling and computing for materials and macromolecular systems with multiple time and length scales.
+Topics to be explored include nonequilibrium statistical mechanics, accelerated molecular dynamics, conformation dynamics, kinetic Monte Carlo, rare events, metastability, and spatial averaging" to which this project contributes.
+
+%\omit{SEEMS OUT OF PLACE.
+%Moreover this project will contribute to the mathematical theory of stochastic climate prediction whose mathematical framework has previously been modelled  by stochastic ordinary differential equations (Majda et al., 2001).
+%}
+
+
+
+
+%\footnote{NEED TO EXPLICITLY CROSS REFERENCE TO AIMS 3 AND 4 SOMEWHERE.  IS IT FROM THIS NEXT PARAGRAPH??  PICK UP ON THE MENTION OF RARE EVENTS AND METASTABILITY IN THE PREVIOUS QUOTE.}
+One innovation of the project is that we extend deterministic approaches (averaging, slow manifold, homogenization) to the difficult case of \spde{}s with micro-macro interplay in time and/or space and under more general conditions.
+In contrast, deterministic averaging methods \cite[]{SVM07} and homogenization \cite[]{Cioranescu1999, Hornung1996} typically rely on the restrictive  assumption that the structure and dynamics on the miscroscale are periodic.
+A generalization of periodicity on microscopical dynamics is mixing. Under the mixing assumption, a deterministic averaging method has been generalized to study more general systems with separated time scales, as in some recent work for slow-fast \spde{}s \cite[]{Wang2008a, Wang2008b, Cerrai2009}.
+However, mixing systems are rare. For example, in the climate-weather model, the fast varying weather system usually has many metastable states (attractor basins)~\cite[]{Imkeller2001}.
+This project will provide new results on the important characteristics of the macroscopic dynamics of multiscale \spde{}s when the system has more than one long lasting, metastable, state.
+
+
+
+
+
+\paragraph{Approach}
+
+%Ensure you identify tasks, with planned timelines, participants and any required equipment.
+The dynamical theory of invariant manifolds \cite[]{Bates1992, Carr1983, Henry1983} is a powerful and widely applicable theory used to eliminate consistently and systematically many unnecessary physical `modes' of a system and deals instead with a lower dimensional system with equivalent long term dynamical behaviour \cite[]{Roberts05c}.
+Correspondingly, stochastic invariant manifold theory  for finite dimensional random dynamical systems \cite[]{Boxler89, Arnold1998} and for infinite dimensional random dynamical systems \cite[]{Duan2003} begin to underpin the model reduction of \spde{}s.
+Currently extant theory assumes that the nonlinearity is Lipschitz; this requirement is of little use for most applications.
+Initial work~\cite[]{Blomker2010} makes a first step to remove the Lipschitz restriction to obtain a local lower dimensional reduced model, with a high probability, by a cutoff technique for stochastic Burgers-type equations on one dimensional domain.
+This project will extend theory to support non-Lipschitz nonlinearity cases that appear in application areas, and detail behaviour of the flow on their invariant manifolds.
+Moreover, our approach will reveal useful practical relations among the stochastic amplitude, the stochastic averaging and the stochastic invariant manifold reduction.
+
+
+
+For the purpose of discussion, consider the following  microscopic model
+\begin{eqnarray}
+w_t=\mathcal{L}(x, \epsilon)w+F(w, x, \epsilon)+Q(w, x, t, \epsilon)
+\label{e:mic-model}
+\end{eqnarray}
+where $x$~is position in  one or more spatial dimensions on a bounded domain or even the technically much more difficult case of an unbounded domain; $w$~is some scalar or vector field such as fluid velocity and pressure; $\mathcal{L}$~is a dissipative linear operator which has a significant spectral gap, such as~$\nabla^2$ often does; $F$~is the nonlinearity and $Q$~is some suitable space-time stochastic forcing.
+We use the small parameter~$\epsilon$ to characterise the separation between the macroscopic spatio-temporal scales of interest and the microscopic scales where most noise modes occur.
+Among many relevant examples of interest are the stochastic forced reaction-diffusion equations~\cite[]{Wang2009}, the stochastic Burgers' equation~\cite[]{Roberts05c, Blomker2007, Blomker2007a, Blomker2010, E2000}, stochastic Navier--Stokes equations \cite[]{Haire2006}, and the stochastic Swift--Hohenberg equation 
+Our discussion and project also covers the case when the  is a discrete operator on a lattice, as in a lattice Boltzman simulationwhere the theory is much easier due to the finite dimensionality, albeit large dimension.
+ described wave motion in random porous media by stochastic nonlinear wave equations which we plan to also study in this project even though not strictly in the form
+
+Mostly we will explicitly separate the `slow' macroscopic variables from the `fast' microscopic variables.
+Due to the significant spectral gap of the linear operator
+$\mathcal{L}$, the splitting
+\begin{eqnarray}
+w=u+v\label{e:split}
+\end{eqnarray}
+generally separates the linearised dynamics to the coupled \spde\ form  \cite[]{Wang2007, Wang2008b, Blomker2010}
+\begin{eqnarray}
+u_t&=&A u+f(u,v,x ) +q_1(u,v, x, t )\label{e:u}\\
+v_t&=&\frac{1}{\epsilon}\left[Bv+g(u,v,x)\right]+\frac{1}{\sqrt{\epsilon}}q_2(u,v,x,t)\,,\label{e:v}
+\end{eqnarray}
+where $A$~and~$B$ are the projection of~$\mathcal{L}$ according to the split~(\ref{e:split}), and similarly for~$f$, $g$, $q_1$ and~$q_2$.
+Sometimes a physical system is already written in this linearly separated form, sometimes not.
+The parameter~$\epsilon$ measures the separation of time scales.
+Standard numerical integration schemes fail in practice, even for stochastic ordinary differential equations, due to the wide separation between the~$\mathcal{O}(\epsilon^{-1})$ time-scale one must compute with, and the~$\mathcal{O}(1)$  time-scales one is typically interested in physical application \cite[e.g.]{E05, VandenEijnden03}.
+Under the assumption that for fixed~$u$, (\ref{e:v})~is exponential mixing, an effective time discretization approximation is derived by averaging \cite[]{E05, VandenEijnden03}.
+However, for the case that~(\ref{e:v}) is not exponential mixing (for example, (\ref{e:v})~exhibits metastable states), the traditional stochastic averaging approach fails to reproduce the effective dynamics of the original system.
+Moreover, the transition path of the fast system~(\ref{e:v}) has an as yet unknown effect on the macroscopic behaviour of the system.
+%\footnote{??THE FOLLOWING THREE SENTENCES NEED REVISION.  FIRST, "ADDRESS" IS VERY WEAK; WRITE WHAT ARE THE PLANNED DELIVERABLES, NOT JUST WE WILL SPEND TIME ON IT.  SECOND, THE "CLIMATE-WEATHER MODEL" KEEPS POPPING UP: SHOULD WE SPECIFY IT AND WHY IT IS IMPORTANT? THIRD, IS THIS LAST SENTENCE REALLY A GOOD SUMMARY OF THE PARAGRAPH? ??}
+This project will derive an effective macroscopic model from system~(\ref{e:u})--(\ref{e:v}) when the fast part exhibits metastability. Our aim is to describe the effect of the metastability of the fast part on the macroscopic behaviour.
+For example, the well known El~Nino\slash La~Nina `oscillation' in weather may well be the sort of stochastic transitions between metastable states that we will characterise.
+The theory of our macroscopic modelling will be of significant use in later applications.
+
+%
+%So far there is no result on this relevant to applications such as the climate-weather model (Wang et al., 1999; Imkeller and Monahan, 2002).
+%Here the core challenge is how to construct an effective approximation model under more general conditions.
+
+Interaction between microscopic and macroscopic scales feeds microscale noise into the macroscopic scale, and then appears as a mean drift and as small fluctuations \cite[]{Kifer2004, Wang2008b}.
+Such drift and fluctuations play an important role in the large time behaviour of many complex system
+%\footnote{??I DO NOT UNDERSTAND THE NEXT SENTENCE?  WHAT IS ITS ROLE?  SHOULD A REVISION BE HERE OR ELSEWHERE??}
+Such drift and fluctuation from microscopic scale have also been considered in the simpler case of the numerical analysis of systems described by stochastic \emph{ordinary} differential equation~\cite[]{E05,VandenEijnden03}.
+This project will build analogous knowledge in infinite dimensional stochastic systems, namely for classes of \spde{}s that are important in application.
+The theory developed in this project will give good support to practical numerical analysis of \spde{}s so that modern ideas become practical tools for engineers and scientists.
+
+%??\footnote{PERHAPS WEAVE THIS QUOTE IN HERE??}
+Our methodology will impact the ongoing call by the U.S. National Science Foundation for research on ``What can dynamical systems research contribute to the estimation of uncertainty in nonlinear stochastic dynamical systems?''
+There are lots of work on the application of dynamical systems theory to complex models described by finite dimensional stochastic systems, for example, \cite{Gottwald2010, Gottwald06} studied how to derive slow dynamics from a finite dimensional complex system with separated time scale and approximate it.
+Our project will focus on the topic for infinite dimensional stochastic systems.
+
+
+Small fluctuations may cause path transition in system with small probability.
+These transitions have been described by the large deviation principle for stochastic ordinary equations
+Large deviation theory is an important and effective  tool to deal  with the problems of rare events~For microscopic \spde{} models~(\ref{e:u})--(\ref{e:v}), our initial work \cite[]{Wang2010a} builds large deviations for the microscopic system~(\ref{e:u})--(\ref{e:v}) under the assumption of exponential mixing.
+We plan to build large deviations  for more generalized microscopic \spde{}s without the usual assumption of exponential mixing~(\aim{3}).
+Then we will develop theory to understand and characterise the mechanism of rare events, including the likely exit position and exit path of microscopic system.
+These are the most important aspects of the metastability of a stochastic complex system~(\aim{4}).
+This project will describe the path transition caused by the small fluctuation from microscopic scale, and give a geometric picture of metastability of \spde{}s describing complex systems.
+Rare events, a prominent feature of stochastic systems, alter the properties of a system, and their characterisation is an essential and outstanding need for analysing complex systems 
+
+
+
+Stochastic averaging and stochastic invariant manifolds are compelling methods to derive macroscopic models from stochastic systems with separated time scales; for example,  they underly qualitative analysis for full General Circulation Modelsand simulation for multiscale stochastic ordinary systems
+Mixing assumptions empower modelling of \spde{}s with separated time scales
+Stochastic homogenization is also an potent tool to extract macroscopic approximation model for stochastic systems defines in porus media under periodic or mixing assumption 
+Our planned development of further theoretical and constructive methods based upon stochastic averaging, stochastic invariant manifold and stochastic homogenization will empower sound macroscopic modelling in many applications involving stochastic systems.
+
+
+
+
+\paragraph{Benefit}
+
+%Among other aspects, perhaps describe the extent to which the proposed project will build collaborations, i.e.~across industry and/or research institutions and/or disciplines.
+Previous nationally competitive research funding has built up a strong research team on dynamical modelling under the leadership of the CI Prof.~Roberts.
+Funding this proposed project is essential to maintain beyond 2011 the momentum of the team which, as well as its international collaborators, currently consists locally of three post-docs (Dr~W. Wang, Dr~Judy Bunder and Dr~X. Cheng), a one year visitor (Dr~Yan Lv), and a PhD student.
+Mentoring of researchers in the team is facilitated through meetings to discuss results, strategic directions, and research opportunities for the team, in addition to the regular in-depth technical discussion meetings.
+Our team is located in the new Engineering Mathematics building with all new facilities including local and regional high performance computing capability.
+
+\paragraph{National Research Priority}
+
+%If the research has been nominated as focussing upon a topic or outcome that falls within one of the National Research Priorities, explain how it addresses one or more of the associated Priority Goals (as selected in Part B1 of the Proposal form).
+%Describe how the Award and the proposed project/program of research will increase national research capacity and/or enhance the capacity of one or more of the targeted discipline areas.
+
+
+The expected outcomes of this project include the creation of effective and accurate methods to derive macroscopic models for \spde{}s relevant to complex, large scale, physical and engineering systems.
+Our homogenization results for \spde{}s will provide effective methods for the programme of the established Nanotechnology Research Group and in subsurface modelling in the School of Petroleum.
+Our detailed description of metastability for complex system will provide a clear geometric picture to improve our understanding of many complex systems in applications such as climate change, stochastic climate prediction, phase transition problems.
+Lastly, more stable and accurate discrete modelling for \spde{}s will  complement numerical analysis on \spde{}s by providing more stable and accurate discrete model.
+
+This project develops fundamental theory and methodology for macroscopic reduction of complex systems in engineering and sciences.
+In particular, the project includes the difficult description of rare path transitions, potential application include extreme climate change and phase transition in diffusion.
+For these reasons this project is a vital contribution to Australia's Research Priority of ``Frontier technologies for building and transforming Australian industry:  Breakthrough sciences".
+
+
+
+
+\subsubsection{Institutional support}
+
+\begin{arcinstruction}
+%Address the selection criteria:
+%\begin{itemize}
+%\item is there an existing, or developing, supportive and high quality research environment?
+%\item are the necessary facilities available to complete the project?
+%\item are there adequate strategies to encourage dissemination, commercialisation, if appropriate, and promotion of research outcomes?
+%\end{itemize}
+\end{arcinstruction}
+
+%Ensure you mention who will be mentoring you and how.
+
+
+Previous nationally competitive research funding has built up a strong research team on dynamical modelling under the leadership of the CI Prof.~Roberts.
+Funding this proposed project is essential to maintain beyond 2011 the momentum of the team which, as well as its international collaborators, currently consists locally of three post-docs (Dr~W. Wang, Dr~Judy Bunder and Dr~X. Cheng), a one year visitor (Dr~Yan Lv), and a PhD student.
+Mentoring of researchers in the team is facilitated through meetings to discuss results, strategic directions, and research opportunities for the team, in addition to the regular in-depth technical discussion meetings.
+Our team is located in the new Engineering Mathematics building with all new facilities including local and regional high performance computing capability.
+
+Our team researches under the umbrella of the Faculty funded Theoretical and Applied Mechanics Research Group, while also contributing to other teams of researchers on projects such as the \textsc{arc} Linkage Project on the development of innovative technologies for oil production based on the advanced theory of suspension flows in porous media.
+Within the Faculty Group, we interact with teams on nanomechanics led by Prof~Jim Hill and on fluid flow led by Assoc~Prof Jim Denier.
+These strong research areas within the Faculty Group arise from the School's successful policy on rejuvenation of the staffing profile through recruitment of outstanding researchers such as the recent appointments of Profs.~Hill and Roberts.
+The school's research program is valued highly: for example, the school currently hosts at least eleven successful Discovery Project applications, and hosted about 40~recent competitive research grants.\footnote{\url{http://www.maths.adelaide.edu.au/research/grants.html}}
+Through its strong wide ranging research programs the school hosts many visitors that enhance its vibrant research environment.
+
+The Faculty Research Strategy recognises such developing core strengths, and seeks to support establishing growth of critical mass with direct funding of initiatives as part of its strategic plan for research.
+The Faculty awarded funds totalling about \$1~million in each of 2009 and 2010 to initiatives in key research areas including the Research Group encompassing our team and project.
+The Faculty strategy calls for research to address the most significant problems and challenges which this project does as evidenced by its connections with important recent reviews of applied mathematics.
+The recent \textsc{era} report identified that the Faculty supported a broad range of research at or above world standard, and, furthermore, that the Faculty made significant contributions to interdisciplinary research in three areas in the university rated as well above world standard. 
+
+The local strategic plans that support the area of this research project align with the University's strategic plan to support research concentrations and collaborations focussed on areas of existing or emerging strength and on national and global priorities.
+Mathematics is recognised as a strong Fundamental Discipline in the university's Research Expertise and Strengths.\footnote{\url{http://www.adelaide.edu.au/research/our/}}
+The project will contribute to the strategy to continue to build and maintain strong research partnerships and linkages with other universities, government, industry and the broader community by maintaining one of a number of internationally recognised, strategic research capabilities.
+The PhD students requested for the project will also contribute to the University strategy to increase research student load.
+The university's strategy is contributing to it retaining its distinguished position as one of the top hundred universities in the world (as measured by The Times).
+
+\paragraph{Communication of results} The results of the research programme will be publicised via several mechanisms with different time scales and recognition: immediately with prepared manuscripts placed on the preprint archive at \url{http://arXiv.org};  quickly to researchers at biennial conferences of \textsc{siads}, \textsc{ctac} and \textsc{emg} and their refereed proceedings; and publishing comprehensive articles in international peer reviewed journals. We will develop further web client services to complement our current capability at \url{http://www.maths.adelaide.edu.au/anthony.roberts/} which currently answers roughly 200~requests per year for analysis by researchers throughout the world.
+
+
+
+
+
+\subsubsection{References}
+
+\begin{arcinstruction}
+%Note: References only may be in 10 point font.
+\end{arcinstruction}
+
+%Use \verb|\cite{}| (wherever possible for active referencing) or \verb|\cite[]{}| (for parenthetical referencing) and BibTeX, then \LaTeX\ will build your reference list for you.
+
+%\bibliography{yourbibfile}
+
+\begin{thebibliography}{999}
+
+
+\bibitem{Arn}   L. Arnold,  \emph{Random dynamical systems},  Springer--Verlag, Berlin, 1998.
+\bibitem{Brown08}  D. L.   Brown,  \emph{Applied Mathematics at the U.S. Department of Energy: Past, Present and a View to the Future},  Report by an Independent Panel from the Applied Mathematics Research Community, May 2008.
+
+\bibitem{Dol} J. Dolbow, M. A. Khaleel  and J. Mitchell, \emph{ Multiscale Mathematics Initiative: A Roadmap}, Report from the $3$rd DoE Workshop on Multiscale Mathematics, Technical report, Department of Energy, Washington, DC, http://www.sc.doe.gov/ascr/Research/AM/MultiscaleMathWorkshop3.pdf,  2004.
+\bibitem{xa}   X. Chen, A. J. Roberts and I. G.  Kevrekidis, Projective integration of expensive multiscale stochastic simulation, \emph{ANZIAM J.},  \textbf{52(E)}(2011),  C661--C677.
+
+
+\bibitem{c4}  X.   Chen, J.  Duan, State space decomposition for
+nonautonomous dynamical systems, \emph{Proceedings of the Royal Society of Edinburgh: Section A  Mathematics}, {\bf 141}(2011),  957--974.
+
+
+\bibitem{e3}   X.   Chen, J.  Duan  and  M. Scheutzow, Evolution systems of measures for
+stochastic flows,   \emph{Dynamical Systems: An International
+Journal},  {\bf 26}(2011),  323--334.
+\bibitem{c1}  X.   Chen, J.  Duan and X.  Fu, A sufficient condition
+for bifurcation in random dynamical systems,\emph{ Proceedings of
+the American Mathematical Society}, {{\bf 138}}(2010), 965--973.
+
+
+\bibitem{c2}  X.  Chen, J.  Duan, Random chain recurrent sets for
+random dynamcial systems, \emph{Dynamical Systems: An International
+Journal}, {\bf 24}(2009), 537--546.
+
+
+
+
+\bibitem{xaj}   X.   Chen, A.  J. Roberts and and I.  G.   Kevrekidis,  Errors on projective integration of  Ornstein--Uhlenbeck processes, preprint. 
+
+\bibitem{xiao}  X.  Chen, A.   J. Roberts and J.  Duan,  Center manifolds for stochastic evolution equations, https://github.com/a1215364/manifold. 
+
+\bibitem{xl}   X. Chen, A. J. Roberts and J.   Duan,   Center manifolds for infinite dimensional random dynamical systems, preprint. 
+
+
+\bibitem{Chow}  P.  Chow,   Stochastic Partial Differential Equations, Chapman and Hall/CRC, 2007
+
+
+
+\bibitem{Duan2}
+J.  Duan,   K. Lu   and B. Schmalfu{\ss},
+ Invariant manifolds for stochastic partial
+ differential equations.
+\emph { Ann. Probab.},   \textbf{ 31}(2003),  2109--2135.
+\bibitem{e1} W.  E and  E. Vanden-Eijnden,  Some critical issues for the ``equation-free" approach to multiscale modeling,  \emph{ arXiv:0806.162}, 2008.
+\bibitem{e2}  W.  E,  \emph{Principles of multiscale modeling},  Cambridge University Press,  2011.
+\bibitem{Gri}  P.  Grigoris and A.  Stuart,  \emph{Multiscale methods. averaging and homogenization},  Springer--Verlag, New York, 2008.
+\bibitem{Lv}   K.  Lu   and B. Schmalfu{\ss},   Invariant manifolds for stochastic wave equations.
+\emph{Journal of Differential Equations},
+\textbf{2},   460--492,  2007.
+
+\bibitem{Ok}     \O ksendal, Bernt K,  Stochastic Differential Equations: An Introduction with Applications. Berlin: Springer, 2003.
+\end{thebibliography}
+
+
+
+
+\subsection{Strategic Statement by the Administering Organisation}
+
+\begin{arcinstruction}
+%Please provide a Strategic Statement of two A4 pages maximum which outlines the institutional support for the DECRA Candidate. Please provide:
+%\begin{itemize}
+%\item The existing and/or emerging research strengths of the Administering Organisation;
+%\item The positioning of the DECRA Recipient within a high quality research environment; and
+%\item The research only and/or research and teaching pathways available at the Administering Organisation during and after completion of the Project.
+%\end{itemize}
+%Note: The strategic statement must be signed by the Deputy Vice?Chancellor (Research), Chief Executive Officer or equivalent.
+
+%Research Branch want a Word copy of this subsubsection.  After satisfied with it, transfer somehow.
+\end{arcinstruction}
+
+
+\subsubsection*{\arcauthor\\\arctitle}
+
+The University of Adelaide is delighted to present this outstanding DECRA proposal for assessment by the Australian Research Council.
+
+% THE TEXT BELOW SHOULD BE INCLUDED IN THE DECRA’s STRATEGIC STATEMENT
+
+The University of Adelaide's sustained research excellence is due to a long tradition of rigorous recruitment, selection and retention of exceptional research staff. The Discovery Early Career Researcher Award (DECRA) scheme represents a tremendous opportunity to drive this tradition further. Recognising the importance of securing and retaining talented early-career researchers, the University of Adelaide will provide the following support for successful DECRA recipients:
+\begin{itemize}
+\item A \$15,000 establishment grant to accelerate research momentum; \item \$5,000 of travel funding to be used to further enhance research collaboration and dissemination;
+\item Salary supplementation to the applicable salary level as under University policy; and
+\item Access to University funding schemes such as Overseas Conferences, Special Studies and other support.
+\end{itemize}
+
+
+\subparagraph{Research strength of the university}
+
+% If the applicant is aligned with a designated University Institute or Centre, then the following a paragraph including the following should be included:
+
+The University has committed \$x to build and establish the Institute/Centre <name> as a world-leading concentration of exceptional inter-disciplinary researchers. <The applicant> will become a key member of this Institute/Centre and have immediate access to the combined expertise and networks of the Institute/Centre, including top-class researchers such as x, y, and~z.
+
+
+\subparagraph{High quality research environment}
+Details of how to address the Research Environment criterion can be found on the Research
+Branch web site at \url{http://www.adelaide.edu.au/rb/arc/research_environment/instructions.html}
+
+\subparagraph{Development pathways}
+See Funding Rules \url{http://www.arc.gov.au/pdf/DECRA_Funding_Rules_21Feb2011.pdf} p6
+
+\emph{Additional Faculty/School support}
+Each Faculty/School may have specific additional support that will be offered to intending DECRA Applicants. This support will depend on whether the applicant is a current University employee with a substantive position, or an external applicant. Such support may include: a continuing rolling contract in the first instance for 3 years post fellowship on the basis of achievement of clear key performance indicators during the Fellowship (as set by the Faculty and School); consideration of appropriate salary supplementation; access to specialist research facilities; management of teaching commitments (for current University employees only).
+Additional support will be offered at the discretion of the relevant Head of School and Faculty Executive Dean.
+\emph{All intending applicants must contact their relevant head of school to discuss any support provisions over and above those indicated in the first paragraph above.}
+
+
+\end{ProjectDescription}
+
+
+
+
+
+
+
+
+
+
+
+\begin{ProjectCost}
+%Choose to document here budget information prior to entering into \textsc{rms}, or omit this section, as you please.
+\end{ProjectCost}
+
+
+
+
+\begin{BudgetJustifications}
+
+%The budget justification is to address the need for the item itself.  Cost is a minor detail.
+%\%begin{itemize}
+%\item If you want to travel, justify why and when you want to travel in terms of the project plan.  Cross reference.  Names names, not vague possibilities.
+%\item If you want lab equipment, justify why your current `world leading' lab does not already have the equipment.  Cross reference the project plan.  For example, the current camera does not have the required resolution/frame rate/whatever.
+%\item The same goes for high performance computers, explain why the school's compute server is inadequate, why SAPAC parallel `supercomputer' is inadequate, why the Australian APAC facility is inadequate.   Estimate load, cross reference to the methods in the project plan.
+%\end{itemize}
+
+
+\subsection{Justification of funding requested from the ARC}
+\begin{arcinstruction}
+%The ARC budget justification information must not exceed one A4 page.
+%The justification should indicate how the DECRA candidate will use the project cost funding each year. This statement should include the need and cost for each item requested from the ARC using the same headings as in the budget at E1.
+%	Please justify and explain the need and cost for each item requested from the ARC. Explain why a certain item is necessary for the Project and what it will contribute. For research support personnel please state that a full?time research assistant or technician with a specific level of expertise is required for ‘x’ months.
+%	If seeking funding for new equipment, please describe how the equipment will be used and provide details of the manufacturer, supplier, cost and installation based on quotations obtained. Do not supply the quotations.
+%	Please justify and explain the need and cost of economy domestic and international travel for the DECRA Candidate and research support personnel associated with a Project.
+\end{arcinstruction}
+
+
+
+
+
+\end{BudgetJustifications}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{ResearchSupport}
+\begin{arcinstruction}
+For the DECRA Candidate on this Proposal, provide details of requested and awarded research funding (ARC and other agencies in Australia and overseas) for the years 2010 to 2014 inclusive. That is, list all projects/Proposals/fellowships awarded or requests submitted involving the DECRA Candidate for funding.
+•	Use the table format below to create a list of relevant projects/Proposals. Then upload the list as a PDF.
+•	List the most current Proposal first. List other Proposals and/or projects (including Fellowships) in descending date order.
+•	Support statuses are ‘R’ for requested, ‘C’ for current support and ‘P’ for past support. •	The Proposal/project ID applies only to Proposals, current and past projects (including
+fellowships), funded by the ARC or NHMRC. •	Details should be provided for all sources of funding, not just ARC funding. •	Funding amounts are to be in thousands of Australian dollars. •	The example on the following page is a guide however a template table is also provided
+which has been formatted to fit the specified minimum margin requirement of 0.5cm.
+\end{arcinstruction}
+
+
+\subsection{Research support for the DECRA Candidate}
+\begin{center}
+\begin{tabular}{|p{\mywidth}|l|l|p{5.6em}|*5{p{2.5em}|}}
+\hline
+Description (all named investigators on any proposal or grant/ project/ fellowship in which a participant is involved, project title, source of support, scheme and round) &
+\rotatebox[origin=tr]{90}{ Same Research Area} &
+\rotatebox[origin=tr]{90}{ Support Status} &
+Proposal/ Project ID (if applicable) &
+2010 (\$'000) &
+2011 (\$'000) &
+2012 (\$'000) &
+2013 (\$'000) &
+2014 (\$'000)
+\\ \hline
+\arcauthor; \arctitle; ARC; FT11 &
+Yes &
+R &
+DE12xxx?? &
+&
+&
+?? &
+?? &
+??
+\\ \hline
+B Jones, Really great proposal on excellent things.  ARC, LP10R2 &
+Yes &
+R &
+LP100200999   &
+&
+&
+80 &
+60 &
+50
+\\ \hline
+A Jones, B Jones, Another really great proposal on excellent things. Round 3 &
+No &
+C  &
+&
+&
+65 &
+100&
+&
+\\ \hline
+Mr Example, sample proposal that is great,  ARC, DP 2006 &
+Yes &
+P &
+DP06000000 &
+150 &
+&
+&
+&
+\\ \hline
+\end{tabular}
+\end{center}
+
+
+\end{ResearchSupport}
+
+
+
+
+\begin{ProgressStatements}
+\begin{arcinstruction}
+For the DECRA Candidate on this Proposal, please attach a statement detailing progress for each ARC Project/Fellowship involving the DECRA Candidate that has been awarded funding for 2010 under the ARC Discovery Projects, Linkage Projects or Fellowships (Future Fellowships, Australian Laureate Fellowship, Federation Fellowships) schemes.
+Click ‘Add Answer’ to insert additional boxes for each relevant Project/Fellowship.
+Please provide:
+•	The Project ID, first named investigator (Project Leader), and scheme for the DECRA Candidate on this Proposal who has been awarded funding for 2010 under the ARC Discovery Projects, Linkage Projects or Fellowships scheme;
+•	Upload a PDF of no more than one A4 page for each funded project detailing the progress for each Project/Fellowship involving that Participant; and
+•	A statement of progress for each project indicated in Part H1 (received 2010 ARC funding) must be included in the Proposal submission regardless of whether a progress report or final report has or has not been submitted to the Research Office or ARC.
+Note: Only projects which have received funding from the ARC in 2010 (annual allocated funding) require a statement of progress. (Please do not include statements on progress for projects which received carry forward funding only.) You do not need to provide statements for projects other than for Discovery Projects, Linkage Projects or Fellowships schemes.
+\end{arcinstruction}
+
+Repeat subsections for each project as required.
+
+\subsection{DP07xxxxx: Previous fascinating project}
+\begin{arcinstruction}
+Upload a PDF of no more than one A4 page for each funded project detailing the progress for each Project/Fellowship involving that Participant.
+\end{arcinstruction}
+
+\end{ProgressStatements}
+
+
+
+
+
+\begin{Additional}
+
+\begin{arcinstruction}
+If ‘yes’ has been selected you must:
+•	Select from the agencies available in the drop down list; and •	Select ‘Other’ if the agency is not in the drop down list and type the name of the agency/ies in
+the box provided.
+Note: A full list of Proposals submitted should also be included at H1 (Research Support) of the Application Form.
+It is important that the ARC is aware of any concurrent applications for funding support (e.g.~through other Commonwealth, state or territory funding programs). You must also keep the ARC informed about the outcomes of these applications.
+\end{arcinstruction}
+
+Document anything here prior to uploading information, or omit, as you please.
+
+\subsection{Have you submitted or do you intend to submit a similar Proposal to any other agency?}
+
+\end{Additional}
+
+
+
+
+\end{document}

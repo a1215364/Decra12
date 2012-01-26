@@ -1,0 +1,317 @@
+% Warning: do not even think of changing this style file.
+\def\@title{\LaTeX\ style for drafting ARC DECRA 2012}
+\def\@author{Prof Tony Roberts, Apr 18, 2011}
+\def\@rcorganisation{The University of Adelaide} 
+
+% Designed to work with pdfLaTeX \documentclass[12pt,a4paper]{article}
+% See the template file for a skeleton of its use.
+% Options: 
+%     big, magnifies writing so that it is still readable when RMS shrinks the page
+%     more, typesets a little more information per page
+%     More, typesets even more information per page, decreases comprehension
+%     MORE, typesets much more info per page, but much decreased comprehension
+%     colour, auto-colours some stuff
+% Preamble:
+%     \organisation{Erewhon University} changes the administering organisation
+%     \def\arcsectioncolour{\color{xxxx}} changes section header colour
+%     \def\arccaptioncolour{\color{xxxx}} changes table and figure caption
+%     \def\archeadercolour{\color{xxxx}} changes heading colour
+%     \def\arcfootercolour{\color{xxxx}} changes footer colour
+%     Use red, green, blue, magenta, yellow, cyan, black, white
+%     or the X11 colour names, obtainable from a file such as
+%     /usr/local/texlive/2007/texmf-dist/tex/latex/graphics/dvipsnames.def
+
+\def\@rccoverinformation{%
+%\begin{quote}\LARGE This template and style are only provisional, pending the release of ARC FT11 Instructions for Applicants.  In particular, I expect the headings for the Project Description to change (although content may be almost the same), following changes to Discovery Projects, and following ERA assessment. \end{quote}
+\begin{center}\small\begin{minipage}{25em}
+\paragraph{Some style file information}
+This style file is designed to work with pdfLaTeX \url{\documentclass[12pt,a4paper]{article}}
+See the template file for a skeleton of its use.
+\paragraph{Options}
+\begin{description}
+    \item[big] magnifies writing so that it is still readable when RMS shrinks the page;
+    \item[more] typesets a little more information per page;
+    \item[More] typesets even more information per page, but decreases comprehension;
+    \item[MORE] typesets much more info per page, but with much decreased comprehension;
+    \item[colour] auto-colours some stuff.
+\end{description}
+Ensure you delete the ARC instructions (slanted font) and my advice (roman font) before submission.
+% \paragraph{Preamble} 
+% \begin{itemize}
+%     \item \url{\organisation{Erewhon University}} 
+%     changes the administering organisation
+%     \item \url{\def\arcsectioncolour{\color{xxxx}}} 
+%     changes section header colour
+%     \item \url{\def\arccaptioncolour{\color{xxxx}}} 
+%     changes table and figure caption
+%     \item \url{\def\archeadercolour{\color{xxxx}}} 
+%     changes heading colour
+%     \item \url{\def\arcfootercolour{\color{xxxx}}} 
+%     changes footer colour.
+%     Use red, green, blue, magenta, yellow, cyan, black, white
+%     or the X11 colour names, obtainable from a file such as 
+%     \url{/usr/local/texlive/2007/texmf-dist/tex/latex/graphics/dvipsnames.def}
+% \end{itemize}
+\end{minipage}\end{center}
+}
+
+% process options: big, colour, more, More, MORE, times, wide, squish
+\newif\if@rccolour \@rccolourfalse
+\newif\if@rcbig \@rcbigfalse
+\newif\if@rcwide \@rcwidefalse
+\newif\if@rctimes \@rctimesfalse
+\newif\if@rcsquish \@rcsquishfalse
+\DeclareOption{colour}{\@rccolourtrue}
+\DeclareOption{wide}{\@rcwidetrue}
+\DeclareOption{big}{\@rcbigtrue\@rcwidetrue}
+\DeclareOption{times}{\@rctimestrue}
+\DeclareOption{squish}{\@rcsquishtrue}
+\DeclareOption{more}{\@rctimestrue}
+\DeclareOption{More}{\@rctimestrue\@rcwidetrue}
+\DeclareOption{MORE}{\@rctimestrue\@rcwidetrue\@rcsquishtrue}
+\ProcessOptions
+% confirm options
+\if@rccolour\typeout{**** using colour}\fi
+
+% load packages
+\newcommand{\@rcpackerr}[1]{
+    \typeout{**********************************************************}
+    \typeout{Failed to find LaTeX package #1.sty Download via}
+    \typeout{www.ctan.org/tex-archive/macros/latex/contrib/#1}
+    \typeout{**********************************************************}
+    }
+\IfFileExists{geometry.sty}{
+    \if@rcwide
+      \if@rcbig\usepackage[mag=1155,truedimen,margin=6mm,a4paper]{geometry}
+      \else      \usepackage[margin=6mm,a4paper]{geometry}
+      \fi
+    \else
+      \if@rcbig\usepackage[mag=1155,truedimen,margin=20mm,a4paper]{geometry}
+      \else      \usepackage[margin=20mm,a4paper]{geometry}
+      \fi
+    \fi}{
+    \@rcpackerr{geometry}}
+\IfFileExists{natbib.sty}{
+    \usepackage{natbib}\bibliographystyle{agsm}}{
+    \@rcpackerr{natbib}\bibliographystyle{plain}}
+\IfFileExists{url.sty}{
+    \usepackage{url} \newcommand{\doi}[1]{\url{doi:##1}}}{
+    \@rcpackerr{url}}
+\IfFileExists{graphicx.sty}{
+    \usepackage{graphicx}}{
+    \@rcpackerr{graphicx}}
+\if@rctimes\IfFileExists{times.sty}{
+    \usepackage{times}}{
+    \@rcpackerr{times}}
+\fi
+    
+% can have nice headings with \pagestyle{headings}
+\renewcommand{\MakeUppercase}[1]{\archeadercolour\textsf{#1}}
+% put a date into the footer
+%\def\@oddfoot{\hfill\footnotesize\sf\arcfootercolour\today}
+%\def\@evenfoot{\footnotesize\sf\arcfootercolour\today\hfill}
+% set things up
+\def\organisation#1{\gdef\@rcorganisation{#1}}
+\renewcommand{\thepage}{\thesection.\arabic{page}}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}}
+% need to number paragraphs for planned tasks cross-referencing
+\stepcounter{secnumdepth}
+% ensure the page counter restarts
+\let\@rcsection\section
+\renewcommand{\section}[1]{
+    \setcounter{page}{1}
+    \@rcsection{#1}}
+% squish the bibliography closer together and smaller
+\let\@rcbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{
+    \let\section\@gobbletwo
+    \small\sloppy
+    \@rcbibliography{#1}
+    \parsep=0pt \itemsep=0pt}
+    \renewcommand{\harvardurl}[1]{}
+\let\newline\relax
+% and also squish other lists
+\let\@rcenumerate\enumerate
+\renewcommand{\enumerate}{
+    \@rcenumerate 
+    \itemsep=0pt}
+\let\@rcitemize\itemize
+\renewcommand{\itemize}{
+    \@rcitemize 
+    \itemsep=0pt}
+\let\@rcdescription\description
+\renewcommand{\description}{
+    \@rcdescription 
+    \itemsep=0pt}
+    
+% define to do nothing except in the ten best publication sections
+\def\arcproject#1{}
+\def\arcstatement#1{}
+\def\newblock{\hskip0.5em plus 0.5em minus 0.25em}
+ \def\@rcproject#1{\quad #1.} 
+ \def\@rcstatement#1{\quad #1}
+% optionally squish spacing
+\if@rcsquish
+    \def\baselinestretch{0.9}
+    \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-1.25ex\@plus -0.3ex \@minus -.1ex}%
+                                     {0.5ex \@plus .1ex}%
+                                     {\normalfont\large\bfseries}}
+    \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-1.25ex\@plus -0.3ex \@minus -.1ex}%
+                                     {0.5ex \@plus .1ex}%
+                                     {\normalfont\normalsize\bfseries}}
+    \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {1.25ex \@plus0.3ex \@minus.1ex}%
+                                    {-0.3em}%
+                                    {\normalfont\normalsize\bfseries}}
+    \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+                                       {1.25ex \@plus0.3ex \@minus .1ex}%
+                                       {-0.3em}%
+                                      {\normalfont\normalsize\bfseries}}
+\fi
+
+
+% remember the metadata for later use
+\AtBeginDocument{
+    \let\arctitle\@title
+    \let\arcauthor\@author
+    }
+
+% width for tables
+\newlength{\mywidth}
+\setlength{\mywidth}{0.2\linewidth}
+
+
+% these are the environments of the various sections
+% ensure sections start on new pages, by forcing at end
+\newenvironment{AdministrativeSummary}{
+    \maketitle
+    \thispagestyle{empty}
+    {\let\section\@rcsection\tableofcontents}
+    \setcounter{section}{0}
+    \@rccoverinformation
+    \newpage
+    \section{Administrative Summary}
+    \subsection{Administering organisation}
+    \@rcorganisation 
+    \subsection{Proposal Title} 
+    \arctitle 
+    \subsection{Person Participant Summary}
+    \arcauthor
+    }{\newpage}
+
+\newenvironment{Classifications}{
+    \setcounter{section}{1}
+    \section{Classifications and Other Statistical Information}}{\newpage}
+    
+\newenvironment{ProjectDescription}{
+    \setcounter{section}{3}
+    \section{Project Description}
+    \let\@rcsubsection\subsection
+    \renewcommand{\subsection}[1]{
+        \newpage
+        \@rcsubsection{##1}}
+    \subsection{Project Description}
+    \subsubsection{Project title} 
+    {\large\arctitle}}{%
+    \paragraph*{DVC(Research) or equivalent} \rule{5cm}{1pt}
+    \quad \textbf{Date} \rule{3cm}{1pt}
+    \newpage}
+    
+\newenvironment{ProjectCost}{
+    \setcounter{section}{4}
+    \section{Project Cost}}{\newpage}
+    
+\newenvironment{BudgetJustifications}{
+    \setcounter{section}{5}
+    \let\@rcsubsection\subsection
+    \renewcommand{\subsection}[1]{\newpage\@rcsubsection{##1}}
+    \section{Budget Justifications}}{\newpage}
+
+\newcounter{Person}% to count the people
+\setcounter{Person}{0} 
+\newcommand{\xcite}[1]{% for in-Person labels
+    [\expandafter\ref{\Roman{Person}#1}]} 
+\newenvironment{Personnel}{
+    \setcounter{section}{2}
+    \stepcounter{Person}
+    % widths for the table of information
+    \setlength{\mywidth}{\linewidth}
+    \addtolength{\mywidth}{-18em} % six dividers + 3 columns
+    \addtolength{\mywidth}{-5.5em} % Publications width
+    % redefine bibitem to work in enumerate for each Person
+    \renewcommand{\bibitem}[1]{\item %
+        \expandafter\label{\Roman{Person}##1}} 
+    \let\@rcsubsection\subsection
+    \renewcommand{\subsection}[1]{
+        \ifnum\arabic{subsection}=2
+          \let\arcproject\@rcproject 
+          \let\arcstatement\@rcstatement
+        \fi
+        \newpage
+        \@rcsubsection{##1}}
+    \section{Research Opportunity and Performance Evidence}
+    \setcounter{subsection}{0}}{\newpage}
+    
+\newenvironment{ResearchSupport}{
+    \setcounter{section}{7}
+    \let\@rcsubsection\subsection
+    \renewcommand{\subsection}[1]{
+        \newpage
+        \@rcsubsection{##1}}
+    \section{Research Support}
+    \setlength{\mywidth}{\linewidth}
+    \addtolength{\mywidth}{-12em} % nine dividers + 2 narrow columns
+    \addtolength{\mywidth}{-5.6em} % project ID width
+    \addtolength{\mywidth}{-12.5em} % five columns of funding
+    }{\newpage}
+    
+\newenvironment{ProgressStatements}{
+    \setcounter{section}{8}
+    \renewcommand{\bibitem}[1]{\item\label{##1}} %simple minded
+    \let\@rcsubsection\subsection
+    \renewcommand{\subsection}[1]{
+        \newpage
+        \@rcsubsection{##1}}
+    \section{Statements on Progress of ARC funded Projects}}{\newpage}
+    
+\newenvironment{Additional}{
+    \setcounter{section}{9}
+    \section{Additional Details}}{\newpage}
+
+% optionally colour headings discretely
+\if@rccolour
+    \def\arcsectioncolour{\color{Brown}}
+    \def\arccaptioncolour{\color{Brown}}
+    \def\archeadercolour{\color{OliveGreen}} 
+    \def\arcfootercolour{\color{cyan}} 
+    \IfFileExists{color.sty}{
+        \usepackage[pdftex,dvipsnames,usenames]{color}}{
+        \@rcpackerr{color}}
+    \IfFileExists{pdfcolmk.sty}{
+        \usepackage{pdfcolmk}}{
+        \@rcpackerr{pdfcolmk}}
+    \let\@rc@startsection\@startsection 
+    \renewcommand{\@startsection}[6]{\@rc@startsection{#1}{#2}{#3}{#4}{#5}%
+        {\arcsectioncolour\raggedright #6}} 
+    \renewcommand{\figurename}{\arccaptioncolour Figure}
+    \renewcommand{\tablename}{\arccaptioncolour Table}
+\else % define nothingness
+    \def\arcsectioncolour{}
+    \def\arccaptioncolour{}
+    \def\archeadercolour{} 
+    \def\arcfootercolour{} 
+\fi
+
+% for typesetting ARC Instructions, as opposed to mine.
+\newenvironment{arcinstruction}{\sl}{}
+
+% For typesetting columns of info to be copied and pasted.
+\newenvironment{paste}{\list{}{%
+    \linewidth 30em%
+    \leftmargin 0pt%
+    \parsep 3ex%
+    \item\relax}}%
+    {\endlist}
